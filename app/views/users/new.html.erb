@@ -1,0 +1,88 @@
+<%= content_for :stylesheets do %>
+    <%= stylesheet_link_tag "users/new", media: "all", 'data-turbolinks-track': 'reload' %>
+<% end %>
+<div class="interface-signup">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="user-box">
+                <%= render "shared/error_message" %>
+                    <h1 class="account-title">Đăng ký</h1>
+                    <%= form_with model: @user, local: true do |f| %>
+                        <div class="form-box">
+                            <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <%= fa_icon "user" %>
+                                    </div>
+                                </div>
+                                <%= f.text_field :name, required: true, class: "form-control", id: "inlineFormInputGroupUsername", placeholder: "User name"   %>
+                            </div>
+                        </div>
+                        <div class="form-box">
+                            <label class="sr-only" for="inlineFormInputGroupAge">Age</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <%= fa_icon "universal-access" %>
+                                    </div>
+                                </div>
+                                <%= f.number_field :age, required: true, class: "form-control", id: "inlineFormInputGroupAge", placeholder: "Tuổi" %>
+                                <!-- <input type="number" class="form-control" id="inlineFormInputGroupAge" placeholder="Tuổi"> -->
+                            </div>
+                        </div>
+                        <div class="form-box">
+                            <label class="sr-only" for="inlineFormInputGroupAddress">Address</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <%= fa_icon "address-card" %>
+                                    </div>
+                                </div>
+                                <%= f.text_field :address, required: true, class: "form-control", id: "inlineFormInputGroupAddress", placeholder: "Address" %>
+                            </div>
+                        </div>
+                        <div class="form-box">
+                            <label class="sr-only" for="inlineFormInputGroupPhone">Phone</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <%= fa_icon "phone" %>
+                                    </div>
+                                </div>
+                                <%= f.telephone_field :phone, class: "form-control", required: true, id: "inlineFormInputGroupPhone", placeholder: "Number Phone" %>
+                            </div>
+                        </div>
+                        <div class="form-box">
+                            <label class="sr-only" for="inlineFormInputGroupPassWord">Password</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <%= fa_icon "lock" %>
+                                    </div>
+                                </div>
+                                <%= f.password_field :password, required: true, class: "form-control", id: "inlineFormInputGroupPassWord", placeholder: "Password" %>
+                            </div>
+                        </div>
+                        <div class="form-box">
+                            <label class="sr-only" for="inlineFormInputGroupPassWordConfirm">Password Confirm</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <%= fa_icon "eye" %>
+                                    </div>
+                                </div>
+                                <%= f.password_field :password_confirmation, required: true, class: "form-control", id: "inlineFormInputGroupPassWordConfirm", placeholder: "Password Confirm" %>
+                            </div>
+                        </div>
+                        <div class="form-box text-center">
+                            <%= f.submit "Đăng kí", class: "btn btn-primary"%>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hh"></div>

@@ -1,0 +1,4 @@
+$(document).find(".editTypes-<%= @type.id %>").find('.close').click()
+$(document).find(".type-<%= @type.id %>").remove()
+$(document).find(".list-types").prepend("<%= j render('admin/types/tr_type', type: @type) %>")
+$(document).find(".type-<%= @type.id %>").css({'background-color': '#28a745', 'color': '#fff'})

@@ -1,0 +1,4 @@
+$(".editProducts-<%= @product.id %>").find('.close').click()
+$(".product-<%= @product.id %>").remove()
+$(".list-products").prepend("<%= j render('admin/products/tr_product', product: @product) %>")
+$(".product-<%= @product.id %>").css({'background-color': '#28a745', 'color': '#fff'})

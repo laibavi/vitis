@@ -1,0 +1,21 @@
+<div class="banner">
+    <h4>Danh sách các loại giày dành cho <%= collection.name.upcase %></h4>
+</div>
+<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Thể loại</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% count = 0 %>
+      <% types.each do |t| %>
+      <% count +=1 %>
+        <tr>
+          <th scope="row"><%= count %></th>
+          <td><%= t.name %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

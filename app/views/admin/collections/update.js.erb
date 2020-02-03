@@ -1,0 +1,4 @@
+$(".editCollections-<%= @collection.id %>").find('.close').click()
+$(".collection-<%= @collection.id %>").remove()
+$(".list-collections").prepend("<%= j render('admin/collections/tr_collection', collection: @collection) %>")
+$(".collection-<%= @collection.id %>").css({'background-color': '#28a745', 'color': '#fff'})

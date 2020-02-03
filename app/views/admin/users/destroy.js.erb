@@ -1,0 +1,4 @@
+$('.deleteUsers-<%= @id %>').find('.modal-body').find('p').html("<%= j flash[:success] %>")
+$('.deleteUsers-<%= @id %>').find('.modal-footer').find('.delete').hide()
+$('.user-<%= @id %>').css({'background-color':'#dc3545', 'color':'#dc3545'})
+$('.user-<%= @id %>').find('.option').html('')

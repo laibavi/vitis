@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield :page_title %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= yield :stylesheets %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= yield :script %>
+  </head>
+
+  <body class="i-index">
+      <div class="layoutz">
+          <%= render "layouts/header" %>
+          <%= yield %>
+          <%= render "layouts/footer" %>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<%= provide :title, "quản lý Types" %>
+<%= content_for :stylesheets do %>
+    <%= stylesheet_link_tag "admin/content", media: "all", "data-turbolinks-track" => true %>
+<% end %>
+<div class="wrapper">
+    <div class="container">
+        <div class="table-data">
+            <div class="banner">
+                <h3>Danh sách Types</h3>
+            </div>
+            <div class="add-type add">
+                <%= form_with model: [:admin, @type], class: "form-add" do |f|%>
+                <div class="row">
+                    <div class="col-md-2">
+                        <span>Thêm Types</span>
+                    </div>
+                    <div class="col-md-5">
+                        <%= f.text_field :name, required: true, class: "form-control name-add-type", placeholder: "type name"   %>
+                    </div>
+                    <div class="col-auto">
+                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                        <%= f.select :collection_id, Collection.all.collect{|c| [c.name.capitalize, c.id]}, {include_blank: false}, {class:"custom-select mr-sm-2", id:"inlineFormCustomSelect"} %>
+                    </div>
+                    <div class="col-md-3">
+                        <%= f.button :submit, name:"comit", class: "btn btn-success button-comit" do %>
+                            <%= fa_icon "plus" %>
+                        <% end %>
+                    </div>
+                    <% end%>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 rolz">
+                    <div class="ro-table">
+                        <table id="table_types" class="display text-center">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Collection</th>
+                                    <th>Option</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list-types">
+                                <% @types.each do |type| %>
+                                    <%= render "admin/types/tr_type", type: type %>
+                                <% end %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<%= content_for :scripts do %>
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#table_types').DataTable({
+            searching: true,
+            ordering: true
+        });
+    } );
+    </script>
+<% end %>

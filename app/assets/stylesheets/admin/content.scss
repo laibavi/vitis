@@ -1,0 +1,70 @@
+// Place all the styles related to the admin/users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.form-box{
+    padding: 7px 0;
+    input{
+        border: 1px solid #b5b5b5;
+        &:focus{
+            outline: none;
+            box-shadow: none;
+
+        }
+    }
+}
+.errors-users{
+    padding: 10px;
+    font-size: 12px;
+    position: relative;
+    .error-count{
+        color: #ab000d;
+    }
+}
+
+.add{
+    padding: 20px 0 10px 0;
+    span{
+        font-size: 18px;
+        display: table;
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+    .form-add{
+        .button-comit{
+            display: inline-block;
+        }
+    }
+}
+.table-types{
+    padding-top: 50px;
+    text-align: center;
+    .banner{
+        font-size: 18px;
+    }
+}
+.check-admin-input{
+    font-size: 19px;
+}
+.form-edit-product{
+    .image-product{
+        width: 45px;
+        height: 45px;
+    }
+    .custom-file-label{
+        left: 14px;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        outline: none;
+        &::after{
+            display: none;
+        }
+    }
+
+
+
+
+
+
+
+
+}

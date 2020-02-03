@@ -1,0 +1,61 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require clearfix
+ *= require reset
+ *= require header
+ *= require footer
+ *= require owl.carousel.min.css
+ *= require owl.theme.default.min.css
+ *= require_self
+ */
+ @import "color";
+ @import "font-awesome";
+ @import "reset.scss";
+ @import "bootstrap";
+ @import "clearfix";
+
+
+body{
+    line-height: 1.42857143;
+    font-size: 14px;
+    color: #000000;
+    background: #ffffff;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: Open Sans, sans-serif !important;
+    border: 0;
+    transition: 0.3s ease-out;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none !important;
+}
+
+::-webkit-input-placeholder {
+    font-style: italic;
+}
+:-moz-placeholder {
+    font-style: italic;
+}
+::-moz-placeholder {
+    font-style: italic;
+}
+:-ms-input-placeholder {
+    font-style: italic;
+}

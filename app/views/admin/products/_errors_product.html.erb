@@ -1,0 +1,16 @@
+<% if @product.errors.any? %>
+<div class="error-msg alert alert-danger">
+    <div class="error-users">
+        <div class="error-count">
+            <span>Have <%= pluralize(@product.errors.count, "errors") %></span>
+        </div>
+        <div class="errors_details">
+            <ul>
+                <% @product.errors.full_messages.each do |m|%>
+                <li><%= m %></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</div>
+<% end %>

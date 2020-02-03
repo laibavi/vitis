@@ -1,0 +1,114 @@
+.banner-rain{
+    margin-top: 25px;
+    .brain-main{
+        text-align: center;
+        color: #9b0000;
+        text-transform: uppercase;
+        font-weight: 600;
+        z-index: 1000;
+        margin: 25px;
+    }
+}
+.h-b10{
+    height: 10px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.owl-prev{
+    font-size: 20px;
+    color: #9b0000;
+}
+.category{
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+    .title{
+        font-size: 20px;
+        text-transform: uppercase;
+        margin: 0;
+        font-weight: 400;
+        background: #034ea1;
+        display: inline-block;
+        color: #fff;
+        padding: 0;
+        a{
+            color: #fff;
+            min-width: 220px;
+            display: block;
+        }
+    }
+}
+.list-product-special{
+    .product-item{
+        padding: 10px;
+        &:hover{
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+             .purchas{
+                display: block !important;
+            }
+        }
+        .product-image{
+            width: 100%;
+            .link-image{
+                display: inline-block;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        .product-info{
+            .product-name{
+                a{
+                    span{
+                        color: #000;
+                        font-size: 14px;
+                        font-weight: 300;
+                    }
+                }
+            }
+            .sku{
+                a{
+                    color: #212121;
+                    font-size: 12px;
+                }
+            }
+            .price{
+                margin: 10px 0;
+                span{
+                    color: #ed4e4e;
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+            }
+            .purchas{
+                padding: 9px 5px;
+                background: #ed4e4e;
+                display: none;
+                a{
+                    display: inline-block;
+                    width: 100%;
+                    color: #fff;
+                    text-align: center;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                }
+            }
+        }
+
+    }
+}
+
+.cate-more{
+    a{
+        padding: 10px 0 0;
+        display: inline-block;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: 600;
+        &:hover{
+            color: #f72b3f;
+        }
+    }
+}

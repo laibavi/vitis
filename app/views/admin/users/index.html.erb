@@ -1,0 +1,47 @@
+<%= provide :title, "quản lý Users" %>
+<%= content_for :stylesheets do %>
+    <%= stylesheet_link_tag "admin/content", media: "all", "data-turbolinks-track" => true %>
+<% end %>
+<div class="wrapper">
+    <div class="container">
+        <div class="table-data">
+            <div class="row">
+                <div class="col-md-12 rolz">
+                    <div class="banner">
+                        <h3>Danh sách User</h3>
+                    </div>
+                    <div class="ro-table">
+                        <table id="table_users" class="display text-center">
+                            <thead>
+                                <tr>
+                                    <th>User Name</th>
+                                    <th>Age</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
+                                    <th>Admin</th>
+                                    <th>Option</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list-users">
+                                <% @user.each do |user| %>
+                                    <%= render "admin/users/tr_user", user: user %>
+                                <% end %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<%= content_for :scripts do %>
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#table_users').DataTable({
+            searching: true,
+            ordering: true
+        });
+    } );
+    </script>
+<% end %>

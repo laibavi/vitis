@@ -1,0 +1,43 @@
+.interface-signup{
+    margin-top: 50px;
+    .user-box{
+        max-width: 100%;
+        width: 400px;
+        padding: 20px;
+        border: 1px solid #eee;
+        background-color: #fff;
+        -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 20px auto 0px;
+        .account-title{
+            font-size: 18px;
+            padding: 10px 0;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+
+        .form-box{
+            padding: 7px 0;
+            input{
+                border: 1px solid #b5b5b5;
+                &:focus{
+                    outline: none;
+                    box-shadow: none;
+
+                }
+            }
+        }
+    }
+}
+.hh{
+    height: 183px;
+}
+.errors-users{
+    padding: 10px;
+    font-size: 12px;
+    position: relative;
+    .error-count{
+        color: #ab000d;
+    }
+}

@@ -1,0 +1,218 @@
+<header class="main-header">
+    <%= link_to admin_path, class: "logo" do %>
+        <span class="logo-lg">
+            <b>Admin</b>LTE
+        </span>
+    <% end %>
+
+    <nav class="navbarez navbar-static-top">
+        <a href="#" class="sidebar-toogle" data-toggle="push-menu">
+            <%= fa_icon "align-justify" %>
+        </a>
+        <div class="navbar-custom-menu">
+            <ul class="navbar-nav">
+                <li class="dropdown messages-menu">
+                    <a href="#" class="data-toggle" id="dropdownMenuLink-messages"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <%= fa_icon "envelope-o" %>
+                        <span class="label-z bg-success">4</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink-messages">
+                        <li class="header">
+                            You have 4 messages
+                        </li>
+                        <li>
+                            <ul class="menu">
+                                <li>
+                                    <a href="">
+                                        <div class="pull-left">
+                                            <%= image_tag "user.jpg", class: "img-circle" %>
+                                        </div>
+                                        <div class="its-right">
+                                            <h4>Support Team
+                                                <small>
+                                                    <%= fa_icon "clock-o", text: "5 mins" %>
+                                                </small>
+                                            </h4>
+                                            <p>Why not buy a new awsome theme?</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <div class="pull-left">
+                                            <%= image_tag "user2.jpg", class: "img-circle" %>
+                                        </div>
+                                        <div class="its-right">
+                                            <h4>Support Team
+                                                <small>
+                                                    <%= fa_icon "clock-o", text: "7 mins" %>
+                                                </small>
+                                            </h4>
+                                            <p>Why not buy a new awsome theme?</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer">
+                            <%= link_to "See all Messages" %>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown notifications-menu">
+                    <a href="#" class="data-toggle" id="dropdownMenuLink-notifications"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <%= fa_icon "bell-o" %>
+                        <span class="label-z bg-warning">10</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink-notifications">
+                        <li class="header">
+                            You have 10 notifications
+                        </li>
+                        <li>
+                            <ul class="menu">
+                                <li>
+                                    <a href="#">
+                                        <%= fa_icon "users", class: "text-aqua",
+                                        text: "5 new members joined today"  %>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <%= fa_icon "warning", class: "text-yellow",
+                                        text: " Very long description here that may not fit into the
+                                          page and may cause design problems" %>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <%= fa_icon "users", class: "text-red",
+                                        text: "5 new members joined"  %>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <%= fa_icon "shopping-cart", class: "text-green",
+                                        text: "25 sales made"  %>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <%= fa_icon "user", class: "text-red",
+                                        text: "you changed your name"  %>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer">
+                            <%= link_to "View all" %>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown tasks-menu">
+                    <a href="#" class="data-toggle" id="dropdownMenuLink-tasks"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <%= fa_icon "flag-o" %>
+                        <span class="label-z bg-danger">3</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink-tasks">
+                        <li class="header">
+                            You have 9 tasks
+                        </li>
+                        <li>
+                            <ul class="menu">
+                                <li>
+                                    <a href="">
+                                        <h3>Design some buttons
+                                            <small class="pull-right">20%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-aqua" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <h3>Design some buttons
+                                            <small class="pull-right">35%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-green" role="progressbar" style="width: 35%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <h3>Design some buttons
+                                            <small class="pull-right">70%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-red" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <h3>Design some buttons
+                                            <small class="pull-right">10%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-yellow" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer">
+                            <%= link_to "View all tasks" %>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toogle" data-toggle="dropdown" id="dropdownUserMenu">
+                        <%= image_tag "user", class: "user-image" %>
+                        <span class="hidden-xs" class="name-acc"><%= current_user.name %></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownUserMenu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            <%= image_tag "user.jpg", class: "img-circle"%>
+                            <p> <%= current_user.name %>
+                            </p>
+                        </li>
+                        <!-- User body -->
+                        <!-- <li class="user-body">
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <a href="">Flowers</a>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <a href="">Sales</a>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <a href="">Friends</a>
+                                </div>
+                            </div>
+                        </li> -->
+                        <!-- User footer -->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <%= link_to "Page", root_path ,class:"btn btn-default btn-flat" %>
+                            </div>
+                            <div class="pull-right">
+                                <%= link_to "Sign out", logout_path, method: :delete, class: "btn btn-default btn-flat" %>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="" data-toggle="control-sidebar">
+                        <%= fa_icon "gears" %>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

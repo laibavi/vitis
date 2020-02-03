@@ -1,0 +1,117 @@
+<header>
+    <!-- header top && contact  -->
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content-flex">
+                        <div class="item-info-contact">
+                            <a href="">
+                                Hotline: 0966 158 666 (8h - 12h, 13h30-17h)
+                            </a>
+                        </div>
+                        <div class="item-info-contact">
+                            <a href="">
+                                Tìm cửa hàng
+                            </a>
+                        </div>
+                        <div class="item-info-contact">
+                            <a href="">
+                                Liên hệ hợp tác
+                            </a>
+                        </div>
+                        <div class="item-info-contact">
+                            <a href="">
+                                ship hàng ra nước ngoài
+                            </a>
+                        </div>
+                        <div class="item-info-contact">
+                            <a href="">
+                                Kiểm tra đơn hàng
+                            </a>
+                        </div>
+                            <div class="link-login-signup">
+                                <% if logged_in? %>
+                                    <% if check_admin? %>
+                                        <span>
+                                            <%= link_to "Hi, #{current_user.name}", admin_path %>
+                                        </span>|
+                                    <% else %>
+                                        <span>
+                                            <%= link_to "Hi, #{current_user.name}", "#" %>
+                                        </span>|
+                                    <% end %>
+                                    <span>
+                                        <%= link_to "Đăng xuất", logout_path, method: "delete" %>
+                                    </span>
+                                <% else %>
+                                    <span>
+                                        <%= link_to "Đăng nhập", login_path %>
+                                    </span>|
+                                    <span>
+                                        <%= link_to "Đăng kí", new_user_path%>
+                                    </span>
+                                <% end %>
+                            </div>
+                        <div class="item-info-contact">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header bottom list chose -->
+    <div class="header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="logo-wrap">
+                        <%= link_to root_path do %>
+                            <%= image_tag "logo-bitis", class: "image-logo" %>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <ul class="main-menu">
+                        <% get_allcollections.each do |c| %>
+                        <li class="item-menu">
+                            <%= link_to c.name, "#" %>
+                        </li>
+                        <% end %>
+                        <li class="item-menu">
+                            <%= link_to "Về bitis", "#" %>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <%= form_with url: search_path, method: :get, class: "search_form" do |f| %>
+                        <div class="search-form-wrap">
+                            <%= f.text_field :search, class: "input-search", placeholder: "Nhập thông tin cần tìm kiếm..." %>
+                            <%= button_tag class: "button-search" do %>
+                                <%= fa_icon "search" %>
+                            <% end %>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="col-md-1">
+                    <div class="cart-right">
+                        <div class="favorite">
+                            <a href="">
+                                <%= fa_icon "heart-o" %>
+                            </a>
+                        </div>
+                        <div class="cart-header">
+                            <a href="">
+                                <span class="cart-icon">
+                                    <%= fa_icon "shopping-cart" %>
+                                </span>
+                                <span class="cart-count">0</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

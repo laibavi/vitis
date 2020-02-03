@@ -1,0 +1,93 @@
+<aside class="main-sidebar">
+    <section class="sidebar" style="height: auto;">
+        <div class="user-panel">
+            <div class="pull-left image">
+                <%= image_tag "user.jpg", class: "img-circle" %>
+            </div>
+            <div class="pull-left info">
+                <p><%= current_user.name %></p>
+                <a href="">
+                    <%= fa_icon "circle", text: "Online", class: "text-success" %>
+                </a>
+            </div>
+        </div>
+        <%= form_with url: "/search", class:"sidebar-form" do %>
+        <div class="input-group">
+            <%= text_field :person, :name, class: "form-control", placeholder: "Search" %>
+            <span class="input-group-btn">
+                <%= button_tag name: "search", class: "btn btn-flat", id: "search-btn" do %>
+                    <%= fa_icon "search" %>
+                <% end %>
+            </span>
+        </div>
+        <% end %>
+        <!-- sidebar menu -->
+        <ul class="sidebar-menu tree" data-wiget="tree">
+            <li class="header">MAIN NAVICATION</li>
+            <li class="active treeview">
+                <a href="#">
+                    <%= fa_icon "dashboard" %>
+                    <span>Dashboard</span>
+                    <span class="pull-right-container">
+                        <%= fa_icon "angle-left", class: "pull-right" %>
+                    </span>
+                </a>
+                <ul class="treeview-menu" style="display:none;">
+                    <li class="active">
+                        <%= link_to admin_path do %>
+                            <%= fa_icon "circle-o" %>
+                            Dashboard v1
+                        <% end %>
+                    </li>
+                    <li>
+                        <a href="">
+                            <%= fa_icon "circle-o" %>
+                            Dashboard v2
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <%= link_to admin_collections_path do %>
+                    <%= fa_icon "share" %>
+                    <span>Collection</span>
+                <% end %>
+            </li>
+            <li class="treeview">
+                <%= link_to admin_types_path do %>
+                    <%= fa_icon "share" %>
+                    <span>Type</span>
+                <% end %>
+            </li>
+            <li class="treeview">
+                <%= link_to admin_users_path do %>
+                    <%= fa_icon "share" %>
+                    <span>Users</span>
+                <% end %>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <%= fa_icon "share" %>
+                    <span>Products</span>
+                    <span class="pull-right-container">
+                        <%= fa_icon "angle-left", class: "pull-right" %>
+                    </span>
+                </a>
+                <ul class="treeview-menu" style="display:none;">
+                    <li class="">
+                        <%= link_to admin_products_path do %>
+                            <%= fa_icon "circle-o" %>
+                            Danh sách sản phẩm
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to new_admin_product_path do %>
+                            <%= fa_icon "circle-o" %>
+                            Thêm sản phẩm
+                        <% end %>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</aside>

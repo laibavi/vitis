@@ -1,0 +1,9 @@
+$(document).ready(function(){
+    $('.deleteCollections-<%= @id %>').find('.modal-body').find('p').html("<%= j flash[:success] %>")
+    $('.deleteCollections-<%= @id %>').find('.modal-footer').find('.delete').hide()
+    $('.collection-<%= @id %>').css({'background-color':'#dc3545', 'color':'#dc3545'})
+    $('.collection-<%= @id %>').find('.option').html('')
+    $('.deleteCollections-<%= @id %>').find('.dis').removeClass('btn-secondary')
+    $('.deleteCollections-<%= @id %>').find('.dis').addClass('btn-success')
+    $('.deleteCollections-<%= @id %>').find('.dis').html('Xóa thành công')
+})

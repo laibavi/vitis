@@ -1,0 +1,42 @@
+footer{
+    margin-top: 70px;
+    position: relative;
+    bottom: 0;
+    background: #212121;
+    padding: 20px 0;
+    color: #ffffff;
+    .atack-all{
+        .block-list{
+            margin-top: 20px;
+            ul{
+                padding: 0;
+                li{
+                    display: inline-block;
+                    a{
+                        color: #ffffff;
+                        display: block;
+                        padding: 0 10px;
+                        font-weight: 300;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+        .hastag{
+            padding: 0 10px;
+            a{
+                color: #034ea1;
+            }
+        }
+    }
+
+    .bct{
+        padding-top: 10px;
+    }
+    .license{
+        padding-top: 10px;
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+}

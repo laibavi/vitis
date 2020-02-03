@@ -1,0 +1,104 @@
+// Place all the styles related to the admin/AdminController controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+*= require datatables.min
+*= require "admin/header"
+*= require "admin/sidebar"
+*= require "admin/footer"
+*/
+@import "color";
+@import "font-awesome";
+@import "reset.scss";
+@import "bootstrap";
+@import "clearfix";
+
+a{
+    text-decoration: none !important;
+
+}
+body{
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.42;
+    color: $color-night-rider;
+    background: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.logo{
+    transition: width .3s ease-in-out;
+    display: block;
+    float: left;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    width: 230px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding: 0 15px;
+    font-weight: 300;
+    overflow: hidden;
+    &:hover{
+        color: #fff;
+        background-color: $color-lochmara;
+    }
+}
+img{
+    vertical-align: middle;
+}
+p{
+    margin: 0 0 10px;
+}
+.pull-left{
+    float: left !important;
+}
+.pull-right{
+    float: right;
+}
+.img-circle{
+    border-radius: 50%;
+}
+
+.btn-flat{
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-width: 1px;
+}
+.wrapper{
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: #737373;
+    .rolz{
+        padding-right: 10px;
+    }
+    .banner{
+        background: transparent;
+        padding: 15px 15px 0 0;
+        h3{
+            margin: 0;
+            font-size: 24px;
+        }
+    }
+    .ro-table{
+        padding-top: 30px;
+        .option{
+            a{
+                font-size: 10px;
+
+            }
+        }
+    }
+}
+.content-wrapper{
+    background-color: $color-catskill-white;
+    z-index: 800;
+}
+
+
+// covert bootstrap

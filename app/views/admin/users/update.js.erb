@@ -1,0 +1,4 @@
+$(".editUsers-<%= @user.id %>").find('.close').click()
+$(".user-<%= @user.id %>").remove()
+$(".list-users").prepend("<%= j render('admin/users/tr_user', user: @user) %>")
+$(".user-<%= @user.id %>").css({'background-color': '#28a745', 'color': '#fff'})

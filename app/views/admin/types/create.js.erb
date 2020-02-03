@@ -1,0 +1,3 @@
+$(document).find('.list-types').prepend('<%= j render "admin/types/tr_type", type: @type %>')
+$(document).find('.name-add-type').val('')
+$(document).find('.type-<%= @type.id %>').css({'color': '#fff', 'background-color': '#28a745'})

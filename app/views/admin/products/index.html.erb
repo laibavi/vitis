@@ -1,0 +1,68 @@
+<%= provide :title, "quản lý sản phẩm" %>
+<%= content_for :stylesheets do %>
+    <%= stylesheet_link_tag "admin/content", media: "all", "data-turbolinks-track" => true %>
+<% end %>
+
+<div class="wrapper">
+    <div class="container">
+        <div class="table-data">
+            <div class="banner">
+                <h3>Danh sách Sản Phẩm</h3>
+            </div>
+            <% flash.each do |type, msg| %>
+            <div class="alert alert-<%= type %>">
+                <%= msg %>
+            </div>
+            <% end %>
+            <div class="row">
+                <div class="col-md-12 rolz">
+                    <div class="ro-table">
+                        <table id="table_products" class="display text-center">
+                            <thead>
+                                <tr>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Đơn giá</th>
+                                    <th>Thể loại</th>
+                                    <th>Collection</th>
+                                    <th>Option</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list-products">
+                                <% @products.each do |product| %>
+                                    <%= render "admin/products/tr_product", product: product %>
+                                <% end %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= content_for :scripts do %>
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#table_products').DataTable({
+            searching: true,
+            ordering: true
+        });
+        // console.log($('.file-image-edit'))
+        $('.file-image-edit').on('change', function(){
+            var file = this.files[0];
+            var reader = new FileReader();
+            var image = $(this).closest('.custom-file').find('.image-product')
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+            else {
+                image.attr("src", "");
+            }
+            reader.onloadend = function () {
+                image.attr("src", reader.result);
+            }
+        })
+    } );
+</script>
+<% end %>

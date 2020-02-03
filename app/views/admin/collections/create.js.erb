@@ -1,0 +1,3 @@
+$('.list-collections').prepend('<%= j render "admin/collections/tr_collection", collection: @collection %>')
+$('.name-add-collection').val('')
+$('.collection-<%= @collection.id %>').css({'color': '#fff', 'background-color': '#28a745'})

@@ -1,0 +1,60 @@
+$color-lochmara: #357ca5;
+$color-dodger-blue: #367fa9;
+$color-night-rider: #333;
+$color-dark-turquoise: #3c8dbc;
+$color-wild-sand: #f4f4f4;
+$color-boston-blue: #3c8dbc;
+$color-gray: #888888;
+$color-dusty-gray: #999999;
+$color-cerulean: #00c0ef;
+$color-buttercup: #f39c12;
+$color-punch: #dd4b39;
+$color-green-haze: #00a65a;
+$color-outer-space: #222d32;
+$color-Killarney: #3c763d;
+$color-catskill-white: #ecf0f5;
+$color-loblolly: #b8c7ce;
+$color-limed-spruce: #374850;
+$color-dove-gray: #666;
+$color-blue-bayoux: #4b646f;
+$color-shark: #1a2226;
+$color-gray-space: #1e282c;
+$color-bali-hai: #8aa4af;
+$color-white: #fff;
+$color-tundora: #444;
+$color-mischka: #d2d6de;
+
+.text-aqua{
+    color: $color-cerulean !important;
+}
+
+.text-yellow {
+    color: $color-buttercup !important;
+}
+
+.text-red {
+    color: $color-punch !important;
+}
+
+.text-green {
+    color: $color-green-haze !important;
+}
+.text-success{
+    color: $color-Killarney !important;
+}
+
+.progress-bar-aqua{
+    background-color: $color-cerulean !important;
+}
+
+.progress-bar-yellow {
+    background-color: $color-buttercup !important;
+}
+
+.progress-bar-red {
+    background-color: $color-punch !important;
+}
+
+.progress-bar-green {
+    background-color: $color-green-haze !important;
+}

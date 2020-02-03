@@ -1,0 +1,230 @@
+<% provide :page_title, "Trang chủ" %>
+<% content_for :stylesheets do %>
+    <%= stylesheet_link_tag "index", media: "all", 'data-turbolinks-track': 'reload' %>
+<% end %>
+<% content_for :script do %>
+    <%= javascript_include_tag "index", 'data-turbolinks-track': 'reload'%>
+<% end %>
+<%= render "layouts/carousel" %>
+<div class="banner-rain">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="brain-main">Sản phẩm thương hiệu</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- category  -->
+<div class="category">
+    <h2 class="title">
+        <%= link_to "Nam", "#"%>
+    </h2>
+</div>
+<!-- list product -->
+<div class="list-product-special">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-carousel owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <%= link_to "#", class: "link-image" do%>
+                                    <%= image_tag "shose1red.jpg" %>
+                                <% end %>
+                            </div>
+                            <div class="product-desc">
+                                <div class="h-b10"></div>
+                                <div class="product-info">
+                                    <div class="product-name">
+                                        <%= link_to "#" do %>
+                                            <span>Giày thể thao nam vitis hunter X</span>
+                                        <% end %>
+                                    </div>
+                                    <div class="sku">
+                                        <%= link_to "#" do %>
+                                            Hunter Nam
+                                        <% end %>
+                                    </div>
+                                    <div class="price">
+                                        <span>
+                                            749,000 đ
+                                        </span>
+                                    </div>
+                                    <div class="purchas">
+                                        <%= link_to "Mua hàng", "#" %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <%= link_to "#", class: "link-image" do%>
+                                    <%= image_tag "shose2.jpg" %>
+                                <% end %>
+                            </div>
+                            <div class="product-desc">
+                                <div class="h-b10"></div>
+                                <div class="product-info">
+                                    <div class="product-name">
+                                        <%= link_to "#" do %>
+                                            <span>Giày thể thao nam vitis hunter X</span>
+                                        <% end %>
+                                    </div>
+                                    <div class="sku">
+                                        <%= link_to "#" do %>
+                                            Hunter Nam
+                                        <% end %>
+                                    </div>
+                                    <div class="price">
+                                        <span>
+                                            749,000 đ
+                                        </span>
+                                    </div>
+                                    <div class="purchas">
+                                        <%= link_to "Mua hàng", "#" %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <%= link_to "#", class: "link-image" do%>
+                                    <%= image_tag "shose3.webp" %>
+                                <% end %>
+                            </div>
+                            <div class="product-desc">
+                                <div class="h-b10"></div>
+                                <div class="product-info">
+                                    <div class="product-name">
+                                        <%= link_to "#" do %>
+                                            <span>Giày thể thao nam vitis hunter X</span>
+                                        <% end %>
+                                    </div>
+                                    <div class="sku">
+                                        <%= link_to "#" do %>
+                                            Hunter Nam
+                                        <% end %>
+                                    </div>
+                                    <div class="price">
+                                        <span>
+                                            749,000 đ
+                                        </span>
+                                    </div>
+                                    <div class="purchas">
+                                        <%= link_to "Mua hàng", "#" %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <%= link_to "#", class: "link-image" do%>
+                                    <%= image_tag "shose4.jpg" %>
+                                <% end %>
+                            </div>
+                            <div class="product-desc">
+                                <div class="h-b10"></div>
+                                <div class="product-info">
+                                    <div class="product-name">
+                                        <%= link_to "#" do %>
+                                            <span>Giày thể thao nam vitis hunter X</span>
+                                        <% end %>
+                                    </div>
+                                    <div class="sku">
+                                        <%= link_to "#" do %>
+                                            Hunter Nam
+                                        <% end %>
+                                    </div>
+                                    <div class="price">
+                                        <span>
+                                            749,000 đ
+                                        </span>
+                                    </div>
+                                    <div class="purchas">
+                                        <%= link_to "Mua hàng", "#" %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <%= link_to "#", class: "link-image" do%>
+                                    <%= image_tag "shose5.webp" %>
+                                <% end %>
+                            </div>
+                            <div class="product-desc">
+                                <div class="h-b10"></div>
+                                <div class="product-info">
+                                    <div class="product-name">
+                                        <%= link_to "#" do %>
+                                            <span>Giày thể thao nam vitis hunter X</span>
+                                        <% end %>
+                                    </div>
+                                    <div class="sku">
+                                        <%= link_to "#" do %>
+                                            Hunter Nam
+                                        <% end %>
+                                    </div>
+                                    <div class="price">
+                                        <span>
+                                            749,000 đ
+                                        </span>
+                                    </div>
+                                    <div class="purchas">
+                                        <%= link_to "Mua hàng", "#" %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <%= link_to "#", class: "link-image" do%>
+                                    <%= image_tag "shose6.jpg" %>
+                                <% end %>
+                            </div>
+                            <div class="product-desc">
+                                <div class="h-b10"></div>
+                                <div class="product-info">
+                                    <div class="product-name">
+                                        <%= link_to "#" do %>
+                                            <span>Giày thể thao nam vitis hunter X</span>
+                                        <% end %>
+                                    </div>
+                                    <div class="sku">
+                                        <%= link_to "#" do %>
+                                            Hunter Nam
+                                        <% end %>
+                                    </div>
+                                    <div class="price">
+                                        <span>
+                                            749,000 đ
+                                        </span>
+                                    </div>
+                                    <div class="purchas">
+                                        <%= link_to "Mua hàng", "#" %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cate-more text-center">
+    <%= link_to "Xem thêm", "#"%>
+</div>

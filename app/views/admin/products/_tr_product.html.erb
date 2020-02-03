@@ -1,0 +1,121 @@
+<tr data-id="<%= product.id %>" class="product-<%= product.id %>">
+    <td class="name"><%= product.name.capitalize %></td>
+    <td class="amount"><%= product.amount %></td>
+    <td class="price"><%= product.price %></td>
+    <td class="type-of-product"><%= product.type.name %></td>
+    <td class="collection-of-product"><%= product.type.collection.name %></td>
+    <td class="option">
+        <%= link_to "#", class: "btn btn-success", data:{toggle: "modal", target: "#editProducts#{product.id}", id: product.id} do %>
+            <%= fa_icon "edit" %>
+        <% end %>
+        <%= link_to "#", class: "btn btn-danger",data:{toggle: "modal", target: "#deleteProducts#{product.id}", id: product.id} do %>
+            <%= fa_icon "trash" %>
+        <% end %>
+    </td>
+</tr>
+
+<div class="modal fade editProducts-<%= product.id %>" id="editProducts<%= product.id %>" tabindex="-1" data-id="<%= product.id %>" role="dialog" aria-labelledby="editUsersLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editUsersLabel">Chỉnh sửa thông tin product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <%= form_with model: [:admin, product] do |f| %>
+                <%= f.hidden_field :id %>
+                <div class="form-box">
+                    <label class="sr-only" for="inlineFormInputGroupproductname">productName</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <%= fa_icon "edit" %>
+                            </div>
+                        </div>
+                        <%= f.text_field :name, required: true, class: "form-control", id: "inlineFormInputGroupProductName", placeholder: "product name"   %>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <%= fa_icon "edit" %>
+                            </div>
+                        </div>
+                        <%= f.number_field :amount, required: true, class: "form-control", id: "inlineFormInputGroupProductAmount", placeholder: "Số lượng"   %>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <%= fa_icon "edit" %>
+                            </div>
+                        </div>
+                        <%= f.number_field :price, required: true, class: "form-control", id: "inlineFormInputGroupProductPrice", placeholder: "Số lượng"   %>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <%= fa_icon "edit" %>
+                            </div>
+                        </div>
+                        <%= f.select :type_id, Type.all.collect{|t| [t.name, t.id]}, {include_blank:true}, {class: "custom-select", id:"type", required: true}%>
+                    </div>
+                </div>
+                <% product.pictures.each do |pic|%>
+                <div class="form-box form-edit-product">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <%= fa_icon "edit" %>
+                            </div>
+                            <div class="custom-file">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <%= f.file_field :picture, class: "custom-file-input form-control file-image-edit", id:"customFile#{pic.id}", name:"picture[image][]" %>
+                                        <label class="custom-file-label" for="customFile<%= pic.id %>">Chose image</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <%= image_tag pic.image.url, class: "image-product" %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <%= f.submit "Save changes", class: "btn btn-primary" %>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<!-- modal confirm delete User -->
+<div class="modal fade deleteProducts-<%= product.id %>" id="deleteProducts<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Xóa <%= product.name %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Bạn có chắc muốn xóa <%= product.name %> ?</p>
+        </div>
+        <div class="modal-footer">
+          <%= link_to "Xoá", admin_product_path(product.id), class: "btn btn-danger delete", method: "DELETE", remote: true %>
+          <button type="button" class="btn btn-secondary dis" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>

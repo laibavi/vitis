@@ -1,0 +1,73 @@
+<tr data-id="<%= type.id %>" class="type-<%= type.id %>">
+    <td class="name"><%= type.name.upcase %></td>
+    <td class="collection"><%= type.collection.name %></td>
+    <td class="option">
+        <%= link_to "#", class: "btn btn-success", data:{toggle: "modal", target: "#editTypes#{type.id}", id: type.id} do %>
+            <%= fa_icon "edit" %>
+        <% end %>
+        <%= link_to "#", class: "btn btn-danger",data:{toggle: "modal", target: "#deleteTypes#{type.id}", id: type.id} do %>
+            <%= fa_icon "trash" %>
+        <% end %>
+    </td>
+</tr>
+
+<!-- modal edit type -->
+<div class="modal fade editTypes-<%= type.id %>" id="editTypes<%= type.id %>" tabindex="-1" data-id="<%= type.id %>" role="dialog" aria-labelledby="editUsersLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editUsersLabel">Chỉnh sửa thông tin type</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <%= form_with model: [:admin, type] do |f| %>
+                <%= f.hidden_field :id %>
+                <div class="form-box">
+                    <label class="sr-only" for="inlineFormInputGrouptypename">typeName</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <%= fa_icon "edit" %>
+                            </div>
+                        </div>
+                        <%= f.text_field :name, required: true, class: "form-control", id: "inlineFormInputGrouptypename", placeholder: "type name"   %>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="input-group">
+                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                        <%= f.select :collection_id, Collection.all.collect{|c| [c.name.capitalize, c.id]}, {include_blank: false}, {class:"custom-select mr-sm-2", id:"inlineFormCustomSelect"} %>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <%= f.submit "Save changes", class: "btn btn-primary" %>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<!-- modal confirm delete User -->
+<div class="modal fade deleteTypes-<%= type.id %>" id="deleteTypes<%= type.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Xóa <%= type.name %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Bạn có chắc muốn xóa <%= type.name %> ?</p>
+        </div>
+        <div class="modal-footer">
+          <%= link_to "Xoá", admin_type_path(type.id), class: "btn btn-danger delete", method: "DELETE", remote: true %>
+          <button type="button" class="btn btn-secondary dis" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>

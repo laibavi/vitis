@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trang <%= yield :title %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'admin/admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= yield :stylesheets %>
+  </head>
+
+  <body style="height: auto">
+      <div class="wrapper" style="min-height: 100%">
+          <%= render 'admin/layouts/header' %>
+          <%= render 'admin/layouts/sidebar' %>
+          <div class="content-wrapper" style="min-height: 926px;">
+              <%= yield %>
+          </div>
+          <%= render 'admin/layouts/footer' %>
+      </div>
+      <%= javascript_include_tag 'admin/admin', 'data-turbolinks-track': 'reload' %>
+      <%= yield :scripts %>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+$(document).ready(function(){
+    $(document).find('.deleteTypes-<%= @id %>').find('.modal-body').find('p').html("<%= j flash[:success] %>")
+    $(document).find('.deleteTypes-<%= @id %>').find('.modal-footer').find('.delete').hide()
+    $(document).find('.type-<%= @id %>').css({'background-color':'#dc3545', 'color':'#dc3545'})
+    $(document).find('.type-<%= @id %>').find('.option').html('')
+    $(document).find('.deleteTypes-<%= @id %>').find('.dis').removeClass('btn-secondary')
+    $(document).find('.deleteTypes-<%= @id %>').find('.dis').addClass('btn-success')
+    $(document).find('.deleteTypes-<%= @id %>').find('.dis').html('Xóa thành công')
+})

@@ -1,0 +1,72 @@
+<%= provide :title, "quản lý Collections" %>
+<%= content_for :stylesheets do %>
+    <%= stylesheet_link_tag "admin/content", media: "all", "data-turbolinks-track" => true %>
+<% end %>
+<div class="wrapper">
+    <div class="container">
+        <div class="table-data">
+            <div class="banner">
+                <h3>Danh sách Collections</h3>
+            </div>
+            <div class="add-collection add">
+                <%= form_with model: [:admin, @collection], class: "form-add", id: "form-add-collection" do |f|%>
+                <div class="row">
+                    <div class="col-md-2">
+                        <span>Thêm Collection</span>
+                    </div>
+                    <div class="col-md-7">
+                        <%= f.text_field :name, required: true, class: "form-control name-add-collection", placeholder: "collection name"   %>
+                    </div>
+                    <div class="col-md-3">
+                        <%= f.button :submit, name:"comit", class: "btn btn-success button-comit" do %>
+                        <%= fa_icon "plus" %>
+                        <% end %>
+                    </div>
+                    <% end%>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 rolz">
+                    <div class="ro-table">
+                        <table id="table_collections" class="display text-center">
+                            <thead>
+                                <tr>
+                                    <th>Collection</th>
+                                    <th>Option</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list-collections">
+                                <% @collections.each do |collection| %>
+                                    <%= render "admin/collections/tr_collection", collection: collection %>
+                                <% end %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6 rolz table-types">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<%= content_for :scripts do %>
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#table_collections').DataTable({
+            searching: true,
+            ordering: true
+        });
+    } );
+
+    $('#form-add-collection')
+    .bind("ajax:success", function(data){
+        console.log(data.detail)
+    })
+    .bind("ajax:error", function(data){
+        console.log(data)
+    })
+
+    </script>
+<% end %>

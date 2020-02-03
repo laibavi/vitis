@@ -1,0 +1,10 @@
+@import "color";
+.main-footer{
+    background: $color-white;
+    padding: 15px;
+    color: $color-tundora;
+    border-top: 1px solid $color-mischka;
+    transition: transform .3s ease-in-out,margin .3s ease-in-out;
+    margin-left: 230px;
+    z-index: 820;
+}
